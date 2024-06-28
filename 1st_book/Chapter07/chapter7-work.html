@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wedding Party Invitation</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img src="images/hero_text.png" alt="Welcome to Our Wedding Party" />
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="#msgArea">Message</a></li>
+          <li><a href="#dateArea">Date</a></li>
+          <li><a href="#formArea">Form</a></li>
+        </ul>
+      </nav>
+      <p>Scroll<br /><img src="images/bar.png" /></p>
+    </header>
+    <main>
+      <section id="msgArea">
+        <h2>Message</h2>
+        <p>
+          この度、カピぞうとカピ子は<br />
+          ウェディングパーティ開催することになりました。<br />
+        </p>
+        <p>
+          お忙しいとは思いますが、ご参加いただけたら嬉しいです。<br />
+          ご出欠のお知らせは、ページ下のフォームよりお願い申し上げます。<br />
+        </p>
+        <p><img src="images/message_img.png" alt="カピぞうとカピ子" /></p>
+      </section>
+      <section id="dateArea">
+        <h2>Save the Date</h2>
+        <p><img src="images/date_img.jpg" alt="" /></p>
+        <p>
+          3022.8.8 Thu<br />
+          Start 18:30-
+        </p>
+        <section>
+          <h2>Access</h2>
+          <p>
+            レンガ街ストリート 1-2-3<br />Ristorante Capita にて<br />03-XXXX-XXXX
+          </p>
+        </section>
+      </section>
+      <section id="formArea">
+        <h2>RSVP</h2>
+        <form action="" method="">
+          <p>
+            <label><input type="radio" name="attend" value="Present" />ご出席</label>
+            <label><input type="radio" name="attend" value="Absent" />ご欠席</label>
+          </p>
+          <p>お名前 <input type="text" name="user_name" /></p>
+          <p>メールアドレス <input type="email" name="user_mail" /></p>
+          <p>
+            ご自身のタイプ <select name="user_type">
+              <option value="Herbivore">草食動物</option>
+              <option value="Carnivore">肉食動物</option>
+              <option value="Human">人間さん</option>
+            </select>
+          </p>
+          <p>アレルギーのある食べ物
+            <label><input type="checkbox" name="allergy" value="egg">卵</label>
+            <label><input type="checkbox" name="allergy" value="milk">乳</label>
+            <label><input type="checkbox" name="allergy" value="wheat">小麦</label>
+            <label><input type="checkbox" name="allergy" value="soybean">大豆</label>
+          </p>
+          <p>メッセージ <textarea name="message"></textarea></p>
+          <p><input type="submit" value="Send"></p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p><small>© Capyzou ＆ Capyco</small></p>
+    </footer>
+  </body>
+</html>
