@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        #root {
+            cursor: pointer;
+            font-size: 20pt;
+            background-color: lightblue;
+            padding: 1px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>React</h1>
+    <div id="root" onclick="doCount();">wait...</div>
+    <script>
+        let counter = 0;
+        let dom = document.querySelector('#root');
+        doCount();
+
+        function doCount() {
+            counter++;
+            let element = React.createElement(
+                'p', {}, "count: " + counter
+            )
+            const root = ReactDOM.createRoot(dom)
+            root.render(element)
+        }
+    </script>
+</body>
+
+</html>
