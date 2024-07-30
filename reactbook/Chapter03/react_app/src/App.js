@@ -3,73 +3,75 @@ import './App.css';
 import Rect from './Rect'
 import React, { Component } from 'react'
 
-class App extends Component {
-  data = [
-    "This is list sample.",
-    "これはリストのサンプルです。",
-    "配列をリストに変換します。",
-    "追加で文章を書いても",
-    "このようにリストを作ってくれます"
-  ]
-  constructor(props) {
-    super(props)
-    this.state = {
-      list: this.data
-    }
+let data = {
+  title: 'React-Context',
+  message: 'this is sample message.'
+}
+
+const SampleContext = React.createContext(data)
+
+
+let theme = {
+  light: {
+    styles: {
+      backgroundColor: "#f0f9ff",
+      color: "#00f"
+    },
+    head: "bg-primary text-white display-4",
+    alert: "alert alert-primary my-3",
+    text: "text-primary m-3",
+    foot: "py-4",
+  },
+  dark: {
+    styles: {
+      backgroundColor: "#336",
+      color: "#eef",
+    },
+    head: "bg-secondary text-white display-4 mb-4",
+    alert: "alert alert-dark my-3",
+    text: "text-light m-3",
+    foot: "py-4",
   }
+}
+
+const ThemeContext = React.createContext(theme.dark)
+
+class App extends Component {
+  static contextType = ThemeContext
 
   render() {
-    return <div>
-      <h1 className='bg-primary text-white display-4'>React</h1>
-      <div className='contaienr'>
-        <p className='subtitle'>Show List.</p>
-        <List title="サンプル・リスト" data={this.data} />
+    return <div style={this.context.styles}>
+      <h1 className='{this.context.head}'>React</h1>
+      <div className='container'>
+        <Title value="Content page" />
+        <Message value="This is Content sample." />
+        <Message value="※これはテーマのサンプルです。" />
+        <div className={this.context.foot}></div>
       </div>
     </div>
   }
 }
 
-class List extends Component {
-  number = 1
+class Title extends Component {
+  static contextType = ThemeContext
 
   render() {
-    let data = this.props.data
     return (
-      <div>
-        <p className='h5 text-center'>{this.props.title}</p>
-        <ul className='list-group'>
-          {data.map((item, key) =>
-            <li className='list-group-item' key={key}>
-              <Item number={key + 1} value={item} />
-            </li>
-          )}
-        </ul>
+      <div className={this.context.alert}>
+        <h2 style={this.context.style}>{this.props.value}</h2>
       </div>
     )
   }
 }
 
-class Item extends Component {
-  itm = {
-    fontSize: "16pt",
-    color: "#00f",
-    textDecoration: "underline",
-    textDecorationColor: "#ddf"
-  }
-
-  num = {
-    fontWeight: "bold",
-    color: "red"
-  }
+class Message extends Component {
+  static contextType = ThemeContext
 
   render() {
     return (
-      <p style={this.itm}>
-        <span style={this.num}>
-          [{this.props.number}]&nbsp;
-        </span>
-        {this.props.value}
-      </p>
+      <div className={this.context.style}>
+        <p className={this.context.text}>{this.props.value}</p>
+      </div>
     )
   }
 }
