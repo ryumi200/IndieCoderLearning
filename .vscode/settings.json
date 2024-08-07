@@ -1,5 +1,12 @@
 {
-    "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
+    //テーマ
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.productIconTheme": "fluent-icons",
+    //フォント
+    "editor.fontFamily": "'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    //色のカスタマイズ
     "editor.guides.bracketPairs": "active",
     "workbench.colorCustomizations": {
         "editorBracketHighlight.foreground1": "#d06293",
