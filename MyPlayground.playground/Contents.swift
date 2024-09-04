@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 var number: Int?
 if let suji = number {
@@ -15,3 +16,16 @@ if let moji = message {
 }
 
 message?.append("追加のメッセージです")
+
+
+struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    var body: some View {
+        if colorScheme == .dark {
+            Text("ダークモードです")
+        } else {
+            Text("ライトモードです")
+        }
+    }
+}
